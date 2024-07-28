@@ -1,14 +1,4 @@
----
-layout: post
-title: "CyberForce 2023"
-date: 2016-09-13 01:00:00
-image: '/assets/img/post-image.png'
-description: 'my cyberforce experience'
-tags:
-- competitions
-- ctf
-categories:
-- competitions
+
 ------
 ------
 <center>
