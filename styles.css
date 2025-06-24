@@ -1,0 +1,185 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #0d0d0d;
+  color: #f5f5f5;
+  font-size: 1.8rem; /* Increased from default (~16px) */
+  line-height: 1.6; /* Improves readability */
+}
+
+/* Homepage Layout */
+.homepage {
+  height: 100vh;
+  width: 100%;
+  background: #0d0d0d;
+  color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 2rem;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.links a {
+  color: #f5f5f5;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  color: #ff4d4d;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* Typing Animation */
+#subtitle {
+  display: inline-block;
+  font-family: "Courier Monospace";
+  font-size: 2em;
+  white-space: nowrap;
+  color: rgba(229, 228, 228, 0.866);
+}
+
+#typing {
+  color: #ff4d4d;
+  font-family: "Jacquard 12", system-ui;
+}
+
+#cursor {
+  display: inline;
+}
+
+/* Mobile View */
+.mobile {
+  display: none;
+  background-color: black;
+  height: 100vh;
+  width: 100%;
+}
+
+.mobile h1 {
+  color: white;
+  font-size: 50px;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* About Page */
+.aboutpage {
+  background-color: #0d0d0d;
+  color: #f5f5f5;
+  padding: 2rem 1rem;
+}
+
+/* Job Sections */
+.job-container {
+  margin-bottom: 2rem;
+  border-left: 2px solid #ff4d4d;
+  padding-left: 1rem;
+}
+
+.job-year {
+  font-weight: bold;
+  color: #ff4d4d;
+}
+
+.job-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.job-description {
+  margin-top: 0.5rem;
+  color: #ccc;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.skills {
+  margin-top: 0.5rem;
+}
+
+.skill {
+  display: inline-block;
+  background-color: #333;
+  color: #f5f5f5;
+  padding: 4px 8px;
+  margin-right: 5px;
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #ff4d4d;
+}
+
+a.link {
+  color: #ff4d4d;
+  text-decoration: underline;
+}
+
+a.link:hover {
+  color: #ff7777;
+}
+
+/* Custom Button Override for Dark Theme */
+.btn-outline-secondary {
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #ff4d4d;
+  color: #0d0d0d;
+}
+
+.underline-link {
+  color: #aaa;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.underline-link:hover {
+  color: #ff4d4d; /* matches your hover red */
+}
