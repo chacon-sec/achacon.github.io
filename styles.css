@@ -82,6 +82,11 @@ p {
   display: inline;
 }
 
+#cursor[hidden],
+#cursor-about[hidden] {
+  display: none;
+}
+
 /* Mobile View */
 .mobile {
   display: none;
@@ -130,6 +135,15 @@ p {
   font-family: 'Segoe UI', Roboto, Arial, sans-serif;
   font-size: 1.2rem;
   line-height: 1.6;
+}
+
+.job-bullets {
+  margin: 0.25rem 0 0 1.25rem;
+  padding: 0;
+}
+
+.job-bullets li {
+  margin-bottom: 0.4rem;
 }
 
 .skills {

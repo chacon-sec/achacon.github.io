@@ -21,7 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function flicker() { 
     alt ^= 1;
-    document.getElementById('cursor')?.setAttribute("hidden", alt === 1);
+		const cursor = document.getElementById('cursor');
+		if (cursor) {
+			cursor.style.opacity = alt === 1 ? "0" : "1";
+		}
   }
 
   setInterval(flicker, 600);
@@ -65,7 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function flickerAbout() { 
     altAbout ^= 1;
-    document.getElementById('cursor-about')?.setAttribute("hidden", altAbout === 1);
+		const cursorAbout = document.getElementById('cursor-about');
+		if (cursorAbout) {
+			cursorAbout.style.opacity = altAbout === 1 ? "0" : "1";
+		}
   }
 
   setInterval(flickerAbout, 600);
