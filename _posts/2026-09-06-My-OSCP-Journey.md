@@ -25,7 +25,7 @@ When I started my OSCP journey I was pretty familiar with cybersecurity as a who
 My main study material came from doing Hack The Box / Proving Ground machines. A curated list of "OSCP Like" machines made by [**LainKusanagi**](https://medium.com/@luisgerardomoret_69654) and can be found [here](https://docs.google.com/spreadsheets/d/18weuz_Eeynr6sXFQ87Cd5F0slOj9Z6rt/edit?gid=487240997#gid=487240997). I would recommend going through at least all of the Hack The Box and Proving Ground machines before buying the OSCP Course.
 
 <center>
-    <img src="/assets/img/oscp-journey/box-grind.svg">
+    <img src="/assets/img/oscp-journey/box-grind.svg?v=2">
 </center>
 
 <center>
@@ -78,7 +78,7 @@ The challenge labs that I did mimicked the exam environment that you will be pro
 Once I had completed all of my prep material I scheduled my exam for a couple of days later at 10am on a Wednesday. The morning of my exam was like any other day. Woke up at 8am, ate breakfast, did my morning routine, and then logged into the Offsec exam portal by 9:45am.
 
 <center>
-    <img src="/assets/img/oscp-journey/exam-timeline.svg">
+    <img src="/assets/img/oscp-journey/exam-timeline.svg?v=2">
 </center>
 
 <center>
