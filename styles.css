@@ -1,85 +1,189 @@
-/* Reset & Base Styles */
+/* =========================================================
+   Alex Chacon — achacon.xyz
+   Flat, terminal-inspired dark theme
+   ========================================================= */
+
+/* ---------- Design tokens ---------- */
+:root {
+  --bg:            #0a0c10;
+  --surface:       #10131a;
+  --surface-2:     #151a24;
+  --border:        #222936;
+  --border-strong: #333d52;
+  --text:          #e8ebf1;
+  --muted:         #97a0b3;
+  --faint:         #5f6879;
+  --body:          #b9c0cf;
+  --accent:        #ff4d4d;
+  --accent-strong: #ff7575;
+  --accent-soft:   rgba(255, 77, 77, 0.10);
+  --green:         #7ee787;
+  --mono: "JetBrains Mono", "Fira Code", "Courier New", monospace;
+  --sans: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ---------- Base ---------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Courier New', Courier, monospace;
-  background-color: #0d0d0d;
-  color: #f5f5f5;
-  font-size: 1.8rem; /* Increased from default (~16px) */
-  line-height: 1.6; /* Improves readability */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
-/* Homepage Layout */
+body {
+  font-family: var(--mono);
+  background-color: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border-strong);
+  border-radius: 8px;
+  border: 2px solid var(--bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* =========================================================
+   Homepage — terminal window
+   ========================================================= */
 .homepage {
-  height: 100vh;
-  width: 100%;
-  background: #0d0d0d;
-  color: #f5f5f5;
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  padding: 2rem 1rem;
 }
 
-h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+.terminal {
+  width: min(640px, 100%);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow:
+    0 30px 60px -18px rgba(0, 0, 0, 0.65),
+    0 0 70px -30px rgba(255, 77, 77, 0.35);
+  overflow: hidden;
+  animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.3, 1) both;
 }
 
-p {
-  font-size: 1.2rem;
-  color: #aaa;
-  margin-bottom: 2rem;
-  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-  line-height: 1.6;
-}
-
-.links {
+/* -- title bar -- */
+.terminal-bar {
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 0.95rem;
+  background-color: var(--surface-2);
+  border-bottom: 1px solid var(--border);
 }
 
-.links a {
-  color: #f5f5f5;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s;
+.dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
 }
 
-.links a:hover {
-  color: #ff4d4d;
+.dot-red    { background-color: #ff5f57; }
+.dot-yellow { background-color: #febc2e; }
+.dot-green  { background-color: #28c840; }
+
+.terminal-title {
+  margin-left: auto;
+  font-size: 0.72rem;
+  color: var(--faint);
+  letter-spacing: 0.03em;
 }
 
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
+/* -- terminal body -- */
+.terminal-body {
+  padding: 1.7rem 1.6rem 1.6rem;
 }
 
-/* Typing Animation */
+.term-line {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.prompt {
+  color: var(--green);
+  user-select: none;
+}
+
+.name {
+  font-size: clamp(1.8rem, 5vw, 2.3rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0.35rem 0 0.65rem;
+}
+
 #subtitle {
-  display: inline-block;
-  font-family: "Courier Monospace";
-  font-size: 2em;
+  font-size: 1rem;
+  color: var(--muted);
   white-space: nowrap;
-  color: rgba(229, 228, 228, 0.866);
 }
 
 #typing {
-  color: #ff4d4d;
-  font-family: "Jacquard 12", system-ui;
+  color: var(--accent);
 }
 
-#cursor {
-  display: inline;
+#cursor,
+#cursor-about {
+  color: var(--accent);
 }
 
 #cursor[hidden],
@@ -87,113 +191,426 @@ p {
   display: none;
 }
 
-/* Mobile View */
-.mobile {
-  display: none;
-  background-color: black;
-  height: 100vh;
-  width: 100%;
+.ascii-art {
+  /* fixed 45-char canvas from ascii.js — scale fluidly so it
+     always fits, and center the block inside the terminal */
+  width: fit-content;
+  margin: 1.3rem auto 1.5rem;
+  font-family: var(--mono);
+  font-size: clamp(7.5px, 2.9vw, 13px);
+  line-height: 1.25;
+  color: var(--accent);
+  opacity: 0.9;
+  white-space: pre;
+  user-select: none;
 }
 
-.mobile h1 {
-  color: white;
-  font-size: 50px;
-  font-weight: 400;
+/* -- links -- */
+.links {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.7rem;
 }
 
-/* About Page */
-.aboutpage {
-  background-color: #0d0d0d;
-  color: #f5f5f5;
-  padding: 2rem 1rem;
-}
-
-/* Job Sections */
-.job-container {
-  margin-bottom: 2rem;
-  border-left: 2px solid #ff4d4d;
-  padding-left: 1rem;
-}
-
-.job-year {
-  font-weight: bold;
-  color: #ff4d4d;
-}
-
-.job-title {
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-}
-
-.job-description {
-  margin-top: 0.5rem;
-  color: #ccc;
-  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-.job-bullets {
-  margin: 0.25rem 0 0 1.25rem;
-  padding: 0;
-}
-
-.job-bullets li {
-  margin-bottom: 0.4rem;
-}
-
-.skills {
-  margin-top: 0.5rem;
-}
-
-.skill {
-  display: inline-block;
-  background-color: #333;
-  color: #f5f5f5;
-  padding: 4px 8px;
-  margin-right: 5px;
-  margin-top: 5px;
-  border-radius: 5px;
+.links a {
+  font-family: var(--mono);
   font-size: 0.85rem;
+  color: var(--muted);
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 0.5rem 0.9rem;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
 }
 
-.section-title {
-  font-size: 1.5rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  color: #ff4d4d;
+.links a::before {
+  content: "./";
+  color: var(--faint);
+  transition: color 0.2s ease;
 }
 
-a.link {
-  color: #ff4d4d;
-  text-decoration: underline;
+.links a:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  background-color: var(--accent-soft);
+  transform: translateY(-2px);
 }
 
-a.link:hover {
-  color: #ff7777;
+.links a:hover::before {
+  color: var(--accent);
 }
 
-/* Custom Button Override for Dark Theme */
-.btn-outline-secondary {
-  border-color: #ff4d4d;
-  color: #ff4d4d;
+/* -- status bar -- */
+.terminal-status {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0.95rem;
+  background-color: var(--surface-2);
+  border-top: 1px solid var(--border);
+  font-size: 0.68rem;
+  color: var(--faint);
+  letter-spacing: 0.03em;
 }
 
-.btn-outline-secondary:hover {
-  background-color: #ff4d4d;
-  color: #0d0d0d;
+@media (max-width: 520px) {
+  #subtitle {
+    white-space: normal;
+  }
+
+  .terminal-body {
+    padding: 1.3rem 1.1rem 1.2rem;
+  }
+
+  .terminal-status {
+    font-size: 0.62rem;
+  }
+}
+
+/* =========================================================
+   About page
+   ========================================================= */
+.aboutpage {
+  font-family: var(--sans);
+}
+
+/* -- top nav -- */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: rgba(10, 12, 16, 0.86);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.topnav-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0.8rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.topnav-brand {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.topnav-brand::after {
+  content: "_";
+  color: var(--accent);
+  animation: blink 1.2s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.topnav-links {
+  display: flex;
+  gap: 1.1rem;
+}
+
+.topnav-links a {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.topnav-links a:hover {
+  color: var(--accent);
+}
+
+/* -- page -- */
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 3rem 1.25rem 4.5rem;
+}
+
+.ascii-title {
+  font-family: var(--mono);
+  font-size: clamp(1.15rem, 3.5vw, 1.6rem);
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
+  margin-bottom: 1.6rem;
+}
+
+#text-about {
+  color: var(--accent);
+}
+
+.intro p {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: var(--body);
+  margin-bottom: 1.15rem;
 }
 
 .underline-link {
-  color: #aaa;
+  color: var(--text);
   text-decoration: underline;
-  transition: color 0.3s;
+  text-decoration-color: rgba(255, 77, 77, 0.45);
+  text-underline-offset: 3px;
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
 }
 
 .underline-link:hover {
-  color: #ff4d4d; /* matches your hover red */
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* -- section headings -- */
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 3rem 0 1.3rem;
+}
+
+.section-title .hash {
+  color: var(--faint);
+  font-weight: 400;
+}
+
+.section-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: var(--border);
+}
+
+/* -- job / competition / cert cards -- */
+.job-container {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--border-strong);
+  border-radius: 9px;
+  padding: 1.2rem 1.35rem 1.25rem;
+  margin-bottom: 1rem;
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.job-container:hover {
+  border-left-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -18px rgba(0, 0, 0, 0.8);
+}
+
+.job-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.3rem 1rem;
+}
+
+.job-year {
+  font-family: var(--mono);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+.job-company {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.job-title {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--faint);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.job-description {
+  margin-top: 0.2rem;
+}
+
+.job-bullets {
+  list-style: none;
+  margin-top: 0.75rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.job-bullets li {
+  position: relative;
+  padding-left: 1.3rem;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: var(--body);
+}
+
+.job-bullets li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+a.link {
+  font-family: var(--mono);
+  font-size: 0.88em;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 77, 77, 0.4);
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+a.link:hover {
+  color: var(--accent-strong);
+  border-bottom-color: var(--accent);
+}
+
+/* -- skill chips -- */
+.skills {
+  margin-top: 0.9rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--muted);
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.28rem 0.65rem;
+  letter-spacing: 0.02em;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.skill:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* -- back link + footer -- */
+.back-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 2.75rem;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 0.6rem 1.05rem;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.back-home:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  background-color: var(--accent-soft);
+  transform: translateY(-2px);
+}
+
+.about-footer {
+  border-top: 1px solid var(--border);
+  padding: 1.6rem 1.25rem 1.8rem;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--faint);
+  letter-spacing: 0.03em;
+}
+
+.about-footer a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.about-footer a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 620px) {
+  .page {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .job-container {
+    padding: 1rem 1.05rem 1.05rem;
+  }
+
+  .job-header {
+    flex-direction: column;
+  }
+
+  .job-title {
+    white-space: normal;
+  }
+
+  .topnav-links {
+    gap: 0.8rem;
+  }
+
+  .ascii-title {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 420px) {
+  .topnav-inner {
+    padding: 0.7rem 0.9rem;
+    gap: 0.5rem;
+  }
+
+  .topnav-brand {
+    font-size: 0.76rem;
+  }
+
+  .topnav-links {
+    gap: 0.65rem;
+  }
+
+  .topnav-links a {
+    font-size: 0.7rem;
+  }
 }

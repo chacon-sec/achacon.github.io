@@ -421,6 +421,7 @@ var AsciiMorph = (function() {
 
 ];
   
+if (element) {
 	AsciiMorph.render(asciis[0]);
 
 	var currentIndex = 2;
@@ -434,3 +435,4 @@ var AsciiMorph = (function() {
 		currentIndex++;
 		currentIndex%= asciis.length;
 	}, 3000);
+}
