@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 210" role="img" aria-label="OSCP+ exam day timeline from 10 AM to 4 AM">
   <g font-family="ui-monospace, 'JetBrains Mono', Menlo, monospace">
     <!-- title -->
-    <text x="380" y="26" text-anchor="middle" font-size="14" font-weight="bold" fill="#e6edf3">OSCP+ Exam Day — 10 AM to 4 AM</text>
+    <text x="380" y="26" text-anchor="middle" font-size="14" font-weight="bold" fill="#333333">OSCP+ Exam Day — 10 AM to 4 AM</text>
 
     <!-- phase bars -->
     <rect x="30" y="86" width="77.8" height="28" rx="4" fill="#238636"/>
@@ -12,18 +12,18 @@
     <rect x="613.3" y="86" width="116.7" height="28" rx="4" fill="#3d444d"/>
 
     <!-- labels above bars -->
-    <text x="68.9" y="78" text-anchor="middle" font-size="11" fill="#8b949e">AD set pwned</text>
-    <text x="370.3" y="78" text-anchor="middle" font-size="11" fill="#8b949e">food + nap</text>
-    <text x="448" y="78" text-anchor="middle" font-size="11" fill="#8b949e">final push</text>
-    <text x="671.7" y="78" text-anchor="middle" font-size="11" fill="#8b949e">re-reads</text>
+    <text x="68.9" y="78" text-anchor="middle" font-size="11" fill="#615576">AD set pwned</text>
+    <text x="370.3" y="78" text-anchor="middle" font-size="11" fill="#615576">food + nap</text>
+    <text x="448" y="78" text-anchor="middle" font-size="11" fill="#615576">final push</text>
+    <text x="671.7" y="78" text-anchor="middle" font-size="11" fill="#615576">re-reads</text>
 
     <!-- labels inside bars -->
     <text x="224.5" y="104" text-anchor="middle" font-size="11" fill="#ffffff">6 hours, 0 progress</text>
     <text x="555" y="104" text-anchor="middle" font-size="11" fill="#ffffff">report</text>
 
     <!-- pass marker -->
-    <polygon points="496.7,93 502.7,100 496.7,107 490.7,100" fill="#7ee787" stroke="#0d1117" stroke-width="1"/>
-    <text x="496.7" y="178" text-anchor="middle" font-size="13" font-weight="bold" fill="#7ee787">PASS — 12 hours in</text>
+    <polygon points="496.7,93 502.7,100 496.7,107 490.7,100" fill="#1a7f37" stroke="#ffffff" stroke-width="1"/>
+    <text x="496.7" y="178" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a7f37">PASS — 12 hours in</text>
 
     <!-- time axis -->
     <line x1="30" y1="132" x2="730" y2="132" stroke="#30363d" stroke-width="1"/>
@@ -39,7 +39,7 @@
       <line x1="652.2" y1="127" x2="652.2" y2="137"/>
       <line x1="730" y1="127" x2="730" y2="137"/>
     </g>
-    <g font-size="10" fill="#8b949e" text-anchor="middle">
+    <g font-size="10" fill="#615576" text-anchor="middle">
       <text x="30" y="152">10 AM</text>
       <text x="107.8" y="152">12 PM</text>
       <text x="185.6" y="152">2 PM</text>
@@ -53,6 +53,6 @@
     </g>
 
     <!-- footer -->
-    <text x="380" y="198" text-anchor="middle" font-size="11" fill="#8b949e">exam ended 4 AM · report submitted the next day · 7 days later — OSCP certified</text>
+    <text x="380" y="198" text-anchor="middle" font-size="11" fill="#615576">exam ended 4 AM · report submitted the next day · 7 days later — OSCP certified</text>
   </g>
 </svg>

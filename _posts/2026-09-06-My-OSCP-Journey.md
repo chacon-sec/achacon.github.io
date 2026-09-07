@@ -7,7 +7,7 @@ Around 2 years ago when I first got started in cybersecurity I did not consider 
 <!-- more -->
 
 <center>
-    <img src="/assets/img/oscp-journey/oscp-badge.png">
+    <img src="/assets/img/oscp-journey/oscp-badge.png" width="420">
 </center>
 
 <center>
@@ -38,9 +38,9 @@ My main study material came from doing Hack The Box / Proving Ground machines. A
     <img src="/assets/img/oscp-journey/hackthebox.jpg" width="450">
 </center>
 From January 2025 - August 2025 I grinded out around ~60 boxes on the platform Hack The Box. I mainly utilized this platform to perfect my pentesting methodology and get comfortable with going through the motions. When doing boxes on HackTheBox I **heavily** relied on writeups to get me through these boxes. My rule was if I did not make any progress within an hour, I would go to a writeup for a nudge and I think this helped me learn and improve a lot faster. Also, even if I did complete a machine without using a writeup, I would still go back and read the writeup and take notes because the writeup author might have used a technique, or tool that I may have missed that could make my life easier.
-<details>
-    <summary><strong>Why use writeups when you can <del>try harder</del>?</strong></summary>
-    <p>When starting out with pentesting, in my opinion, there is only so much you know and so much more you do not know. Spending 6 hours bashing your head against a wall only to find out you made 0 progress on a box because you used the wrong wordlist is not a productive use of your time. When starting out, do not feel bad about using writeups, but also do not depend on them. During your exam you won't have a writeup so really reinforce your methodology, and as you complete more boxes use writeups less.</p>
+<details style="max-width:50rem;margin:1.875rem auto;padding:.6rem 1.25rem;border:1px solid #e0e0e0;border-radius:8px;">
+    <summary style="display:list-item;cursor:pointer;"><strong>Why use writeups when you can <del>try harder</del>?</strong></summary>
+    <p style="margin:.75rem 0 0;">When starting out with pentesting, in my opinion, there is only so much you know and so much more you do not know. Spending 6 hours bashing your head against a wall only to find out you made 0 progress on a box because you used the wrong wordlist is not a productive use of your time. When starting out, do not feel bad about using writeups, but also do not depend on them. During your exam you won't have a writeup so really reinforce your methodology, and as you complete more boxes use writeups less.</p>
 </details>
 
 <center>
@@ -50,7 +50,7 @@ From January 2025 - August 2025 I grinded out around ~60 boxes on the platform H
 </center>
 
 <center>
-    <img src="/assets/img/oscp-journey/proving-grounds.png">
+    <img src="/assets/img/oscp-journey/proving-grounds.png" width="520">
 </center>
 Once I had completed all the Hack The Box machines I moved onto Proving Grounds, which is essentially Offsec's version of HTB Labs and contain the real "OSCP like" machines. From August 2025 - September 2025 I completed around 40 boxes and found these machines **significantly** easier than their HTB counterparts and more accurately reflected what I saw on my exam. I hardly used writeups when completing these machines and found myself rooting them in 2-4 hours depending on the difficulty of the machine. I would really recommend not skipping out on Proving Grounds as doing these machines pre-OSCP really helped me get used to Offsec styled boxes. If you can root the machines on this platform without using writeups in a timely manner, I'd say you're probably ready to buy the course.
 
@@ -61,9 +61,9 @@ Once I had completed all the Hack The Box machines I moved onto Proving Grounds,
 </center>
 Once I completed my list of machines and felt comfortable with rooting boxes on proving grounds I decided to buy the course. When I got access I briefly skimmed over the course material, skipping the knowledge checks, and wrote down anything that I did not already have in my notes. This took me a couple of hours and then I moved onto the challenge labs.
 The challenge labs that I did mimicked the exam environment that you will be provided during the OSCP exam. I ended up doing OSCP A, OSCP B, OSCP C, and Secura in a weekend. This made me feel comfortable with the exam format, timing, and most importantly pivoting. Really practice your pivoting tooling and methodology here so you do not run into any hiccups during your exam.
-<details>
-    <summary><strong>Why not do ALL of the challenge labs?</strong></summary>
-    <p>From my research, the challenge labs that I decided to do would most accurately reflect what I would see on the exam. Also I was pretty burnt out and tired up to this point, having just come back from an internship, and grinded out in total including the challenge labs, about another 70 boxes in just 45 days. All I wanted to do was take my exam. I also felt it would be a waste of time for me to do more lab practice, especially since I needed to prep for CPTC.</p>
+<details style="max-width:50rem;margin:1.875rem auto;padding:.6rem 1.25rem;border:1px solid #e0e0e0;border-radius:8px;">
+    <summary style="display:list-item;cursor:pointer;"><strong>Why not do ALL of the challenge labs?</strong></summary>
+    <p style="margin:.75rem 0 0;">From my research, the challenge labs that I decided to do would most accurately reflect what I would see on the exam. Also I was pretty burnt out and tired up to this point, having just come back from an internship, and grinded out in total including the challenge labs, about another 70 boxes in just 45 days. All I wanted to do was take my exam. I also felt it would be a waste of time for me to do more lab practice, especially since I needed to prep for CPTC.</p>
 </details>
 
 <center>
@@ -118,7 +118,7 @@ I decided to repeat the crucial enumeration step I had missed and managed to gai
 Once I had gained enough points to pass, I took a little break but kept my exam running and decided that I would finish my report while I still had access to the environment. This was very advantageous for me as I was missing some crucial screenshots for my report. I ended up finishing my report a couple of hours later and re-read it more times than I can remember. At this point it was 4am in the morning and I didn't feel like continuing the exam so I ended my exam and went to sleep. When I woke up I re-read my report a couple of more times and submitted my report. 7 days later, I was OSCP certified!
 
 <center>
-    <img src="/assets/img/oscp-journey/offsec-email.png">
+    <img src="/assets/img/oscp-journey/offsec-email.png" width="560">
 </center>
 
 <center>
